@@ -1,0 +1,86 @@
+aid: groove
+name: Groove
+description: >-
+  Groove is a customer support helpdesk and shared inbox platform for small
+  and midsize businesses that consolidates email, live chat, social, and
+  knowledge base content into a single agent workspace with automations,
+  collision detection, reporting, and SLAs. Groove also provides customer-
+  facing knowledge bases and self-service portals. Developers can integrate
+  via the v2 GraphQL API or the legacy v1 REST API, both authenticated with
+  an API key obtained from account settings.
+type: Index
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+  - Customer Support
+  - Helpdesk
+  - Shared Inbox
+  - Knowledge Base
+  - Conversations
+  - Live Chat
+url: >-
+  https://raw.githubusercontent.com/api-evangelist/groove/refs/heads/main/apis.yml
+created: '2026-05-11'
+modified: '2026-05-11'
+specificationVersion: '0.19'
+apis:
+  - aid: groove:graphql-api
+    name: Groove GraphQL API v2
+    description: >-
+      GraphQL API exposing conversations, messages, agents, contacts,
+      mailboxes, tags, and knowledge base data through a single endpoint.
+      Authentication uses a Bearer API key retrieved from Groove account
+      settings. The GraphQL API is the actively developed replacement for
+      the legacy v1 REST API.
+    humanURL: https://developer.groovehq.com
+    baseURL: https://api.groovehq.com/graphql
+    tags:
+      - GraphQL
+      - Conversations
+      - Messages
+      - Contacts
+      - Agents
+      - Knowledge Base
+    properties:
+      - type: Documentation
+        url: https://developer.groovehq.com
+      - type: GitHub Documentation
+        url: https://github.com/GrooveHQ/docs
+  - aid: groove:rest-api-v1
+    name: Groove REST API v1
+    description: >-
+      Legacy REST API for managing customers, conversations, messages,
+      mailboxes, agents, tags, and webhooks in Groove. Authentication uses
+      a Bearer API key. The REST API is no longer actively developed; new
+      integrations should target the GraphQL API.
+    humanURL: https://doc.groovehq.com
+    baseURL: https://api.groovehq.com/v1
+    tags:
+      - Customer Support
+      - Conversations
+      - Customers
+      - Mailboxes
+      - Webhooks
+    properties:
+      - type: Documentation
+        url: https://doc.groovehq.com
+
+common:
+  - type: Website
+    url: https://www.groovehq.com
+  - type: Developer Portal
+    url: https://developer.groovehq.com
+  - type: Documentation
+    url: https://doc.groovehq.com
+  - type: Pricing
+    url: https://www.groovehq.com/pricing
+  - type: Sign Up
+    url: https://www.groovehq.com/signup
+  - type: Blog
+    url: https://www.groovehq.com/blog
+  - type: GitHub
+    url: https://github.com/GrooveHQ
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/groovehq
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
