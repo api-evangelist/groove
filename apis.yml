@@ -73,7 +73,7 @@ common:
     url: https://doc.groovehq.com
   - type: Pricing
     url: https://www.groovehq.com/pricing
-  - type: Sign Up
+  - type: SignUp
     url: https://www.groovehq.com/signup
   - type: Blog
     url: https://www.groovehq.com/blog
