@@ -1,0 +1,240 @@
+openapi: 3.1.0
+info:
+  title: Groove REST API v1
+  description: |
+    The Groove REST API v1 provides programmatic access to Groove help-desk
+    resources including tickets, messages, customers, agents, groups,
+    mailboxes, folders, attachments, webhooks, knowledge bases, and widgets.
+    Note: v1 REST is no longer in active development; Groove recommends the
+    new GraphQL API for richer features.
+  version: "1.0"
+  contact:
+    name: Groove Developers
+    url: https://developer.groovehq.com
+servers:
+  - url: https://api.groovehq.com/v1
+    description: Groove REST API base URL
+security:
+  - bearerAuth: []
+  - accessTokenQuery: []
+paths:
+  /tickets:
+    get:
+      summary: List tickets
+      operationId: listTickets
+      responses:
+        "200":
+          description: A list of tickets.
+    post:
+      summary: Create a ticket
+      operationId: createTicket
+      responses:
+        "201":
+          description: The created ticket.
+  /tickets/{number}:
+    parameters:
+      - in: path
+        name: number
+        required: true
+        schema:
+          type: string
+    get:
+      summary: Find a ticket
+      operationId: findTicket
+      responses:
+        "200":
+          description: The requested ticket.
+  /tickets/{number}/state:
+    parameters:
+      - in: path
+        name: number
+        required: true
+        schema:
+          type: string
+    put:
+      summary: Update ticket state
+      operationId: updateTicketState
+      responses:
+        "200":
+          description: The updated ticket.
+  /tickets/{number}/assignee:
+    parameters:
+      - in: path
+        name: number
+        required: true
+        schema:
+          type: string
+    put:
+      summary: Update ticket assignee
+      operationId: updateTicketAssignee
+      responses:
+        "200":
+          description: The updated ticket.
+  /messages:
+    get:
+      summary: List messages
+      operationId: listMessages
+      responses:
+        "200":
+          description: A list of messages.
+    post:
+      summary: Create a message
+      operationId: createMessage
+      responses:
+        "201":
+          description: The created message.
+  /messages/{id}:
+    parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: string
+    get:
+      summary: Find a message
+      operationId: findMessage
+      responses:
+        "200":
+          description: The requested message.
+  /customers:
+    get:
+      summary: List customers
+      operationId: listCustomers
+      responses:
+        "200":
+          description: A list of customers.
+  /customers/{id}:
+    parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: string
+    get:
+      summary: Find a customer
+      operationId: findCustomer
+      responses:
+        "200":
+          description: The requested customer.
+    put:
+      summary: Update a customer
+      operationId: updateCustomer
+      responses:
+        "200":
+          description: The updated customer.
+  /agents:
+    get:
+      summary: List agents
+      operationId: listAgents
+      responses:
+        "200":
+          description: A list of agents.
+  /agents/{id}:
+    parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: string
+    get:
+      summary: Find an agent
+      operationId: findAgent
+      responses:
+        "200":
+          description: The requested agent.
+  /groups:
+    get:
+      summary: List groups
+      operationId: listGroups
+      responses:
+        "200":
+          description: A list of groups.
+    post:
+      summary: Create a group
+      operationId: createGroup
+      responses:
+        "201":
+          description: The created group.
+  /groups/{id}:
+    parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: string
+    get:
+      summary: Find a group
+      operationId: findGroup
+      responses:
+        "200":
+          description: The requested group.
+    put:
+      summary: Update a group
+      operationId: updateGroup
+      responses:
+        "200":
+          description: The updated group.
+    delete:
+      summary: Delete a group
+      operationId: deleteGroup
+      responses:
+        "204":
+          description: Group deleted.
+  /mailboxes:
+    get:
+      summary: List mailboxes
+      operationId: listMailboxes
+      responses:
+        "200":
+          description: A list of mailboxes.
+  /folders:
+    get:
+      summary: List folders
+      operationId: listFolders
+      responses:
+        "200":
+          description: A list of folders.
+  /attachments:
+    get:
+      summary: List attachments
+      operationId: listAttachments
+      responses:
+        "200":
+          description: A list of attachments.
+    post:
+      summary: Upload an attachment
+      operationId: uploadAttachment
+      responses:
+        "201":
+          description: The uploaded attachment.
+  /webhooks:
+    post:
+      summary: Create a webhook
+      operationId: createWebhook
+      responses:
+        "201":
+          description: The created webhook.
+  /webhooks/{id}:
+    parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: string
+    delete:
+      summary: Delete a webhook
+      operationId: deleteWebhook
+      responses:
+        "204":
+          description: Webhook deleted.
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      description: OAuth 2.0 / personal access token via Authorization header.
+    accessTokenQuery:
+      type: apiKey
+      in: query
+      name: access_token
+      description: Access token passed as a URL query parameter.
