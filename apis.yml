@@ -20,7 +20,7 @@ tags:
 url: >-
   https://raw.githubusercontent.com/api-evangelist/groove/refs/heads/main/apis.yml
 created: '2026-05-11'
-modified: '2026-05-11'
+modified: '2026-05-30'
 specificationVersion: '0.19'
 apis:
   - aid: groove:graphql-api
@@ -63,6 +63,29 @@ apis:
     properties:
       - type: Documentation
         url: https://doc.groovehq.com
+  - aid: groove:webhooks
+    name: Groove Webhooks
+    description: >-
+      Groove's webhook surface delivered through the legacy REST API webhook
+      subscription endpoint. Customers register destination URLs and event
+      types via POST /v1/webhooks; Groove then POSTs JSON payloads for the
+      fourteen documented events covering tickets, customers, agents, and
+      messages.
+    humanURL: https://doc.groovehq.com/webhooks
+    baseURL: https://api.groovehq.com/v1/webhooks
+    tags:
+      - Webhooks
+      - Events
+      - Tickets
+      - Messages
+      - Customers
+      - Agents
+    properties:
+      - type: Documentation
+        url: https://doc.groovehq.com/webhooks
+      - type: AsyncAPI
+        url: >-
+          https://raw.githubusercontent.com/api-evangelist/groove/refs/heads/main/asyncapi/groove-webhooks-asyncapi.yml
 
 common:
   - type: Website

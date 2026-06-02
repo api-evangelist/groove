@@ -1,0 +1,384 @@
+asyncapi: '2.6.0'
+info:
+  title: Groove Webhooks
+  version: '1.0.0'
+  description: >-
+    AsyncAPI 2.6 description of Groove's webhook surface as documented for the
+    legacy Groove REST API v1. Groove enables customers to register webhook
+    subscriptions through `POST https://api.groovehq.com/v1/webhooks` and to
+    remove them through `DELETE https://api.groovehq.com/v1/webhooks/:id`. When
+    a subscribed event occurs Groove posts a JSON payload to the configured
+    destination URL. The documentation enumerates fourteen event types covering
+    tickets, customers, agents, and messages, and shows four reusable payload
+    shapes (Ticket, Customer, Message, Agent). This document models that
+    documented surface only and does not invent fields, headers, or signature
+    mechanisms that the public documentation does not describe. Groove notes
+    that the REST API is no longer actively developed and recommends new
+    integrations target the GraphQL API; webhook integrations continue to be
+    documented under the REST API surface.
+  contact:
+    name: Groove REST API Documentation
+    url: https://doc.groovehq.com/webhooks
+  license:
+    name: Proprietary - Groove
+    url: https://www.groovehq.com/terms
+  x-source-references:
+    - https://doc.groovehq.com/webhooks
+    - https://www.groovehq.com/docs/help-desk-api
+    - https://developer.groovehq.com
+
+defaultContentType: application/json
+
+servers:
+  subscriber:
+    url: '{endpointUrl}'
+    protocol: https
+    description: >-
+      Customer-hosted HTTPS endpoint registered via the Groove Webhooks REST
+      resource. Groove POSTs the documented JSON payload to this URL when the
+      subscribed event fires.
+    variables:
+      endpointUrl:
+        description: Fully qualified HTTPS URL of the subscriber endpoint.
+        default: https://example.com/groove/webhooks
+
+channels:
+
+  # ------------------------------------------------------------------
+  # Ticket events
+  # ------------------------------------------------------------------
+  ticket_started:
+    description: A new ticket was started in Groove.
+    subscribe:
+      operationId: onTicketStarted
+      summary: ticket_started event.
+      message:
+        $ref: '#/components/messages/TicketEvent'
+
+  ticket_opened:
+    description: A ticket transitioned to the opened state.
+    subscribe:
+      operationId: onTicketOpened
+      summary: ticket_opened event.
+      message:
+        $ref: '#/components/messages/TicketEvent'
+
+  ticket_closed:
+    description: A ticket was closed.
+    subscribe:
+      operationId: onTicketClosed
+      summary: ticket_closed event.
+      message:
+        $ref: '#/components/messages/TicketEvent'
+
+  ticket_assigned:
+    description: A ticket was assigned to an agent or group.
+    subscribe:
+      operationId: onTicketAssigned
+      summary: ticket_assigned event.
+      message:
+        $ref: '#/components/messages/TicketEvent'
+
+  ticket_priority_changed:
+    description: The priority on a ticket changed.
+    subscribe:
+      operationId: onTicketPriorityChanged
+      summary: ticket_priority_changed event.
+      message:
+        $ref: '#/components/messages/TicketEvent'
+
+  ticket_deleted:
+    description: A ticket was deleted.
+    subscribe:
+      operationId: onTicketDeleted
+      summary: ticket_deleted event.
+      message:
+        $ref: '#/components/messages/TicketEvent'
+
+  ticket_tagged:
+    description: A tag was applied to a ticket.
+    subscribe:
+      operationId: onTicketTagged
+      summary: ticket_tagged event.
+      message:
+        $ref: '#/components/messages/TicketEvent'
+
+  ticket_moved:
+    description: A ticket was moved between mailboxes or folders.
+    subscribe:
+      operationId: onTicketMoved
+      summary: ticket_moved event.
+      message:
+        $ref: '#/components/messages/TicketEvent'
+
+  # ------------------------------------------------------------------
+  # Message events
+  # ------------------------------------------------------------------
+  customer_replied:
+    description: A customer replied on a ticket.
+    subscribe:
+      operationId: onCustomerReplied
+      summary: customer_replied event.
+      message:
+        $ref: '#/components/messages/MessageEvent'
+
+  agent_replied:
+    description: An agent replied on a ticket.
+    subscribe:
+      operationId: onAgentReplied
+      summary: agent_replied event.
+      message:
+        $ref: '#/components/messages/MessageEvent'
+
+  note_added:
+    description: An internal note was added to a ticket.
+    subscribe:
+      operationId: onNoteAdded
+      summary: note_added event.
+      message:
+        $ref: '#/components/messages/MessageEvent'
+
+  # ------------------------------------------------------------------
+  # Customer events
+  # ------------------------------------------------------------------
+  customer_added:
+    description: A new customer record was added.
+    subscribe:
+      operationId: onCustomerAdded
+      summary: customer_added event.
+      message:
+        $ref: '#/components/messages/CustomerEvent'
+
+  # ------------------------------------------------------------------
+  # Agent events
+  # ------------------------------------------------------------------
+  agent_invited:
+    description: An agent was invited to the Groove account.
+    subscribe:
+      operationId: onAgentInvited
+      summary: agent_invited event.
+      message:
+        $ref: '#/components/messages/AgentEvent'
+
+  agent_archived:
+    description: An agent was archived from the Groove account.
+    subscribe:
+      operationId: onAgentArchived
+      summary: agent_archived event.
+      message:
+        $ref: '#/components/messages/AgentEvent'
+
+components:
+
+  messages:
+
+    TicketEvent:
+      name: TicketEvent
+      title: Ticket event payload
+      summary: Ticket payload delivered for ticket-scoped webhook events.
+      contentType: application/json
+      payload:
+        $ref: '#/components/schemas/Ticket'
+
+    MessageEvent:
+      name: MessageEvent
+      title: Message event payload
+      summary: >-
+        Message payload delivered for customer_replied, agent_replied, and
+        note_added events. The `note` boolean distinguishes internal notes from
+        public replies.
+      contentType: application/json
+      payload:
+        $ref: '#/components/schemas/Message'
+
+    CustomerEvent:
+      name: CustomerEvent
+      title: Customer event payload
+      summary: Customer payload delivered for customer_added events.
+      contentType: application/json
+      payload:
+        $ref: '#/components/schemas/Customer'
+
+    AgentEvent:
+      name: AgentEvent
+      title: Agent event payload
+      summary: Agent payload delivered for agent_invited and agent_archived events.
+      contentType: application/json
+      payload:
+        $ref: '#/components/schemas/Agent'
+
+  schemas:
+
+    Ticket:
+      type: object
+      description: >-
+        Ticket payload as documented for Groove webhook deliveries. Fields and
+        the nested `links` HAL-style relations are reproduced from the published
+        example.
+      properties:
+        assigned_group:
+          type: [string, 'null']
+          description: Name or identifier of the group the ticket is assigned to, if any.
+        assignee:
+          type: [string, 'null']
+          description: Email of the agent the ticket is assigned to.
+          example: matt@groovehq.com
+        created_at:
+          type: string
+          format: date-time
+          description: When the ticket was created.
+          example: '2012-07-17T13:41:01Z'
+        number:
+          type: integer
+          description: Ticket number within the Groove account.
+          example: 1
+        priority:
+          type: [string, 'null']
+          description: Ticket priority, when set.
+        resolution_time:
+          type: [integer, 'null']
+          description: Resolution time as reported by Groove.
+        title:
+          type: [string, 'null']
+          description: Ticket title / subject.
+        updated_at:
+          type: string
+          format: date-time
+          description: When the ticket was last updated.
+          example: '2012-07-17T13:41:01Z'
+        href:
+          type: string
+          format: uri
+          description: Canonical REST URL of the ticket resource.
+          example: https://api.groovehq.com/v1/tickets/1
+        closed_by:
+          type: [string, 'null']
+          description: Email of the agent that closed the ticket, if applicable.
+          example: matt@groovehq.com
+        links:
+          type: object
+          description: HAL-style links to related resources.
+          properties:
+            assignee:
+              $ref: '#/components/schemas/Link'
+            customer:
+              $ref: '#/components/schemas/Link'
+            state:
+              $ref: '#/components/schemas/Link'
+            messages:
+              $ref: '#/components/schemas/Link'
+
+    Customer:
+      type: object
+      description: Customer payload as documented for Groove webhook deliveries.
+      properties:
+        href:
+          type: string
+          format: uri
+          description: Canonical REST URL of the customer resource.
+          example: https://api.groovehq.com/v1/customers/:customer_email
+        links:
+          type: object
+          properties:
+            tickets:
+              $ref: '#/components/schemas/Link'
+        email:
+          type: string
+          format: email
+          example: smith@gmail.com
+        first_name:
+          type: [string, 'null']
+          example: John
+        last_name:
+          type: [string, 'null']
+          example: Smith
+        about:
+          type: [string, 'null']
+        twitter_username:
+          type: [string, 'null']
+        title:
+          type: [string, 'null']
+        company_name:
+          type: [string, 'null']
+        phone_number:
+          type: [string, 'null']
+        location:
+          type: [string, 'null']
+        website_url:
+          type: [string, 'null']
+        linkedin_username:
+          type: [string, 'null']
+        custom:
+          type: object
+          description: Customer custom fields. Empty object when none are set.
+          additionalProperties: true
+
+    Message:
+      type: object
+      description: >-
+        Message payload as documented for Groove webhook deliveries. Used for
+        customer replies, agent replies, and internal notes.
+      properties:
+        created_at:
+          type: string
+          format: date-time
+          example: '2012-07-17T13:41:01Z'
+        updated_at:
+          type: string
+          format: date-time
+          example: '2012-07-17T13:41:01Z'
+        note:
+          type: boolean
+          description: True when the message is an internal note rather than a reply.
+          example: false
+        body:
+          type: string
+          description: Plain text body of the message.
+          example: Hey, can I add another item to my order?
+        href:
+          type: string
+          format: uri
+          description: Canonical REST URL of the message resource.
+          example: https://api.groovehq.com/v1/messages/:id
+        links:
+          type: object
+          properties:
+            author:
+              $ref: '#/components/schemas/Link'
+            ticket:
+              $ref: '#/components/schemas/Link'
+
+    Agent:
+      type: object
+      description: Agent payload as documented for Groove webhook deliveries.
+      properties:
+        email:
+          type: string
+          format: email
+          example: matt@groovehq.com
+        first_name:
+          type: string
+          example: Matthew
+        last_name:
+          type: string
+          example: Beedle
+        href:
+          type: string
+          format: uri
+          description: Canonical REST URL of the agent resource.
+          example: https://api.groovehq.com/v1/agents/matt@groovehq.com
+        links:
+          type: object
+          properties:
+            tickets:
+              $ref: '#/components/schemas/Link'
+
+    Link:
+      type: object
+      description: HAL-style link object used throughout Groove payloads.
+      properties:
+        href:
+          type: string
+          format: uri
+      required:
+        - href
