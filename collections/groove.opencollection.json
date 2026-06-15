@@ -1,0 +1,357 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Groove REST API v1",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "List tickets",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.groovehq.com/v1/tickets"
+      },
+      "docs": "List tickets"
+    },
+    {
+      "info": {
+        "name": "Create a ticket",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://api.groovehq.com/v1/tickets"
+      },
+      "docs": "Create a ticket"
+    },
+    {
+      "info": {
+        "name": "Find a ticket",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.groovehq.com/v1/tickets/:number",
+        "params": [
+          {
+            "name": "number",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Find a ticket"
+    },
+    {
+      "info": {
+        "name": "Update ticket state",
+        "type": "http"
+      },
+      "http": {
+        "method": "PUT",
+        "url": "https://api.groovehq.com/v1/tickets/:number/state",
+        "params": [
+          {
+            "name": "number",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Update ticket state"
+    },
+    {
+      "info": {
+        "name": "Update ticket assignee",
+        "type": "http"
+      },
+      "http": {
+        "method": "PUT",
+        "url": "https://api.groovehq.com/v1/tickets/:number/assignee",
+        "params": [
+          {
+            "name": "number",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Update ticket assignee"
+    },
+    {
+      "info": {
+        "name": "List messages",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.groovehq.com/v1/messages"
+      },
+      "docs": "List messages"
+    },
+    {
+      "info": {
+        "name": "Create a message",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://api.groovehq.com/v1/messages"
+      },
+      "docs": "Create a message"
+    },
+    {
+      "info": {
+        "name": "Find a message",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.groovehq.com/v1/messages/:id",
+        "params": [
+          {
+            "name": "id",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Find a message"
+    },
+    {
+      "info": {
+        "name": "List customers",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.groovehq.com/v1/customers"
+      },
+      "docs": "List customers"
+    },
+    {
+      "info": {
+        "name": "Find a customer",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.groovehq.com/v1/customers/:id",
+        "params": [
+          {
+            "name": "id",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Find a customer"
+    },
+    {
+      "info": {
+        "name": "Update a customer",
+        "type": "http"
+      },
+      "http": {
+        "method": "PUT",
+        "url": "https://api.groovehq.com/v1/customers/:id",
+        "params": [
+          {
+            "name": "id",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Update a customer"
+    },
+    {
+      "info": {
+        "name": "List agents",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.groovehq.com/v1/agents"
+      },
+      "docs": "List agents"
+    },
+    {
+      "info": {
+        "name": "Find an agent",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.groovehq.com/v1/agents/:id",
+        "params": [
+          {
+            "name": "id",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Find an agent"
+    },
+    {
+      "info": {
+        "name": "List groups",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.groovehq.com/v1/groups"
+      },
+      "docs": "List groups"
+    },
+    {
+      "info": {
+        "name": "Create a group",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://api.groovehq.com/v1/groups"
+      },
+      "docs": "Create a group"
+    },
+    {
+      "info": {
+        "name": "Find a group",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.groovehq.com/v1/groups/:id",
+        "params": [
+          {
+            "name": "id",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Find a group"
+    },
+    {
+      "info": {
+        "name": "Update a group",
+        "type": "http"
+      },
+      "http": {
+        "method": "PUT",
+        "url": "https://api.groovehq.com/v1/groups/:id",
+        "params": [
+          {
+            "name": "id",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Update a group"
+    },
+    {
+      "info": {
+        "name": "Delete a group",
+        "type": "http"
+      },
+      "http": {
+        "method": "DELETE",
+        "url": "https://api.groovehq.com/v1/groups/:id",
+        "params": [
+          {
+            "name": "id",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Delete a group"
+    },
+    {
+      "info": {
+        "name": "List mailboxes",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.groovehq.com/v1/mailboxes"
+      },
+      "docs": "List mailboxes"
+    },
+    {
+      "info": {
+        "name": "List folders",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.groovehq.com/v1/folders"
+      },
+      "docs": "List folders"
+    },
+    {
+      "info": {
+        "name": "List attachments",
+        "type": "http"
+      },
+      "http": {
+        "method": "GET",
+        "url": "https://api.groovehq.com/v1/attachments"
+      },
+      "docs": "List attachments"
+    },
+    {
+      "info": {
+        "name": "Upload an attachment",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://api.groovehq.com/v1/attachments"
+      },
+      "docs": "Upload an attachment"
+    },
+    {
+      "info": {
+        "name": "Create a webhook",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://api.groovehq.com/v1/webhooks"
+      },
+      "docs": "Create a webhook"
+    },
+    {
+      "info": {
+        "name": "Delete a webhook",
+        "type": "http"
+      },
+      "http": {
+        "method": "DELETE",
+        "url": "https://api.groovehq.com/v1/webhooks/:id",
+        "params": [
+          {
+            "name": "id",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Delete a webhook"
+    }
+  ],
+  "bundled": true
+}
