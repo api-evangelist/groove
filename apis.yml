@@ -9,7 +9,7 @@ description: >-
   via the v2 GraphQL API or the legacy v1 REST API, both authenticated with
   an API key obtained from account settings.
 type: Index
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
 - Customer Support
 - Helpdesk
