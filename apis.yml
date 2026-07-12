@@ -90,6 +90,10 @@ apis:
       https://raw.githubusercontent.com/api-evangelist/groove/refs/heads/main/asyncapi/groove-webhooks-asyncapi.yml
 
 common:
+- type: DomainSecurity
+  url: security/groove-domain-security.yml
+- type: Authentication
+  url: authentication/groove-authentication.yml
 - type: Website
   url: https://www.groovehq.com
 - type: DeveloperPortal

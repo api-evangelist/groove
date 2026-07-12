@@ -1,0 +1,23 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/groove-openapi.yml
+summary:
+  types:
+  - apiKey
+  - http
+  api_key_in:
+  - query
+schemes:
+- name: bearerAuth
+  type: http
+  scheme: bearer
+  description: OAuth 2.0 / personal access token via Authorization header.
+  sources:
+  - openapi/groove-openapi.yml
+- name: accessTokenQuery
+  type: apiKey
+  in: query
+  parameter: access_token
+  description: Access token passed as a URL query parameter.
+  sources:
+  - openapi/groove-openapi.yml
