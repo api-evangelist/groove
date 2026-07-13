@@ -2,14 +2,14 @@
   "repo": "groove",
   "feeds": [
     {
-      "source": "https://www.groovehq.com/blog",
-      "feed_url": "",
+      "source": "https://www.groovehq.com/signup",
+      "feed_url": "https://www.groovehq.com/signup",
+      "title": "",
       "saved": 0,
-      "method": "agent-scrape",
-      "error": "listing has no dates; post bodies 404; cannot determine in-window dates"
+      "method": "none"
     }
   ],
-  "fetched": "2026-06-27T12:45:22Z",
+  "fetched": "2026-07-11T11:50:51Z",
   "post_count": 10,
-  "agent_pulled": "2026-06-27"
+  "agent_pulled": "2026-07-04"
 }
