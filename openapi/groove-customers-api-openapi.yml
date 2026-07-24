@@ -1,0 +1,70 @@
+openapi: 3.1.0
+info:
+  title: Groove REST API v1 Agents Customers API
+  description: 'The Groove REST API v1 provides programmatic access to Groove help-desk
+
+    resources including tickets, messages, customers, agents, groups,
+
+    mailboxes, folders, attachments, webhooks, knowledge bases, and widgets.
+
+    Note: v1 REST is no longer in active development; Groove recommends the
+
+    new GraphQL API for richer features.
+
+    '
+  version: '1.0'
+  contact:
+    name: Groove Developers
+    url: https://developer.groovehq.com
+servers:
+- url: https://api.groovehq.com/v1
+  description: Groove REST API base URL
+security:
+- bearerAuth: []
+- accessTokenQuery: []
+tags:
+- name: Customers
+paths:
+  /customers:
+    get:
+      summary: List customers
+      operationId: listCustomers
+      responses:
+        '200':
+          description: A list of customers.
+      tags:
+      - Customers
+  /customers/{id}:
+    parameters:
+    - in: path
+      name: id
+      required: true
+      schema:
+        type: string
+    get:
+      summary: Find a customer
+      operationId: findCustomer
+      responses:
+        '200':
+          description: The requested customer.
+      tags:
+      - Customers
+    put:
+      summary: Update a customer
+      operationId: updateCustomer
+      responses:
+        '200':
+          description: The updated customer.
+      tags:
+      - Customers
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      description: OAuth 2.0 / personal access token via Authorization header.
+    accessTokenQuery:
+      type: apiKey
+      in: query
+      name: access_token
+      description: Access token passed as a URL query parameter.

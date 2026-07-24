@@ -1,0 +1,62 @@
+openapi: 3.1.0
+info:
+  title: Groove REST API v1 Agents Webhooks API
+  description: 'The Groove REST API v1 provides programmatic access to Groove help-desk
+
+    resources including tickets, messages, customers, agents, groups,
+
+    mailboxes, folders, attachments, webhooks, knowledge bases, and widgets.
+
+    Note: v1 REST is no longer in active development; Groove recommends the
+
+    new GraphQL API for richer features.
+
+    '
+  version: '1.0'
+  contact:
+    name: Groove Developers
+    url: https://developer.groovehq.com
+servers:
+- url: https://api.groovehq.com/v1
+  description: Groove REST API base URL
+security:
+- bearerAuth: []
+- accessTokenQuery: []
+tags:
+- name: Webhooks
+paths:
+  /webhooks:
+    post:
+      summary: Create a webhook
+      operationId: createWebhook
+      responses:
+        '201':
+          description: The created webhook.
+      tags:
+      - Webhooks
+  /webhooks/{id}:
+    parameters:
+    - in: path
+      name: id
+      required: true
+      schema:
+        type: string
+    delete:
+      summary: Delete a webhook
+      operationId: deleteWebhook
+      responses:
+        '204':
+          description: Webhook deleted.
+      tags:
+      - Webhooks
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      description: OAuth 2.0 / personal access token via Authorization header.
+    accessTokenQuery:
+      type: apiKey
+      in: query
+      name: access_token
+      description: Access token passed as a URL query parameter.

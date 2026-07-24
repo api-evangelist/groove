@@ -1,0 +1,100 @@
+openapi: 3.1.0
+info:
+  title: Groove REST API v1 Agents Tickets API
+  description: 'The Groove REST API v1 provides programmatic access to Groove help-desk
+
+    resources including tickets, messages, customers, agents, groups,
+
+    mailboxes, folders, attachments, webhooks, knowledge bases, and widgets.
+
+    Note: v1 REST is no longer in active development; Groove recommends the
+
+    new GraphQL API for richer features.
+
+    '
+  version: '1.0'
+  contact:
+    name: Groove Developers
+    url: https://developer.groovehq.com
+servers:
+- url: https://api.groovehq.com/v1
+  description: Groove REST API base URL
+security:
+- bearerAuth: []
+- accessTokenQuery: []
+tags:
+- name: Tickets
+paths:
+  /tickets:
+    get:
+      summary: List tickets
+      operationId: listTickets
+      responses:
+        '200':
+          description: A list of tickets.
+      tags:
+      - Tickets
+    post:
+      summary: Create a ticket
+      operationId: createTicket
+      responses:
+        '201':
+          description: The created ticket.
+      tags:
+      - Tickets
+  /tickets/{number}:
+    parameters:
+    - in: path
+      name: number
+      required: true
+      schema:
+        type: string
+    get:
+      summary: Find a ticket
+      operationId: findTicket
+      responses:
+        '200':
+          description: The requested ticket.
+      tags:
+      - Tickets
+  /tickets/{number}/state:
+    parameters:
+    - in: path
+      name: number
+      required: true
+      schema:
+        type: string
+    put:
+      summary: Update ticket state
+      operationId: updateTicketState
+      responses:
+        '200':
+          description: The updated ticket.
+      tags:
+      - Tickets
+  /tickets/{number}/assignee:
+    parameters:
+    - in: path
+      name: number
+      required: true
+      schema:
+        type: string
+    put:
+      summary: Update ticket assignee
+      operationId: updateTicketAssignee
+      responses:
+        '200':
+          description: The updated ticket.
+      tags:
+      - Tickets
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      description: OAuth 2.0 / personal access token via Authorization header.
+    accessTokenQuery:
+      type: apiKey
+      in: query
+      name: access_token
+      description: Access token passed as a URL query parameter.
