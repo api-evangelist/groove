@@ -1,0 +1,30 @@
+{
+  "provider": "groove",
+  "sources": [
+    "groove-agents-api-openapi.yml",
+    "groove-attachments-api-openapi.yml",
+    "groove-customers-api-openapi.yml",
+    "groove-folders-api-openapi.yml",
+    "groove-groups-api-openapi.yml",
+    "groove-mailboxes-api-openapi.yml",
+    "groove-messages-api-openapi.yml",
+    "groove-tickets-api-openapi.yml",
+    "groove-webhooks-api-openapi.yml"
+  ],
+  "outputs": [
+    "groove-agents-api-openapi.yml",
+    "groove-attachments-api-openapi.yml",
+    "groove-customers-api-openapi.yml",
+    "groove-folders-api-openapi.yml",
+    "groove-groups-api-openapi.yml",
+    "groove-mailboxes-api-openapi.yml",
+    "groove-messages-api-openapi.yml",
+    "groove-tickets-api-openapi.yml",
+    "groove-webhooks-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
