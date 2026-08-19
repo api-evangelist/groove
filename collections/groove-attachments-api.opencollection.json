@@ -1,0 +1,46 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Groove REST API v1 Agents Attachments API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Attachments",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List attachments",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.groovehq.com/v1/attachments"
+          },
+          "docs": "List attachments"
+        },
+        {
+          "info": {
+            "name": "Upload an attachment",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.groovehq.com/v1/attachments"
+          },
+          "docs": "Upload an attachment"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

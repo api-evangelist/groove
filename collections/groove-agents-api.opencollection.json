@@ -1,0 +1,53 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Groove REST API v1 Agents API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Agents",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List agents",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.groovehq.com/v1/agents"
+          },
+          "docs": "List agents"
+        },
+        {
+          "info": {
+            "name": "Find an agent",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.groovehq.com/v1/agents/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Find an agent"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

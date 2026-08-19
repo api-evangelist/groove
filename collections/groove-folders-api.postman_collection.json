@@ -1,0 +1,106 @@
+{
+  "item": [
+    {
+      "id": "3ed5db7b-95cb-4822-be8c-213d7767b640",
+      "name": "Folders",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "00b5f79b-cde8-4bd5-acfb-e03f44abfb02",
+          "name": "List folders",
+          "request": {
+            "name": "List folders",
+            "description": {},
+            "url": {
+              "path": [
+                "folders"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1c2aafde-0cb7-426f-999b-32b467d88b21",
+              "name": "A list of folders.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "folders"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.groovehq.com/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "d0e781d6-1ae2-4129-be59-936579254d65",
+    "name": "Groove REST API v1 Agents Folders API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Groove REST API v1 provides programmatic access to Groove help-desk\nresources including tickets, messages, customers, agents, groups,\nmailboxes, folders, attachments, webhooks, knowledge bases, and widgets.\nNote: v1 REST is no longer in active development; Groove recommends the\nnew GraphQL API for richer features.\n\n\nContact Support:\n Name: Groove Developers",
+      "type": "text/plain"
+    }
+  }
+}

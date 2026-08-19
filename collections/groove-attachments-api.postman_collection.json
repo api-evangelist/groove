@@ -1,0 +1,171 @@
+{
+  "item": [
+    {
+      "id": "225cf2e3-bf7f-4575-8741-450f3d41c5bc",
+      "name": "Attachments",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "fac93447-d9d1-45a3-bc1b-f3c0e432ba75",
+          "name": "List attachments",
+          "request": {
+            "name": "List attachments",
+            "description": {},
+            "url": {
+              "path": [
+                "attachments"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e15fafb7-7423-46fc-b426-682b7b07d3fc",
+              "name": "A list of attachments.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "attachments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2f16f75c-4f37-49bf-86b8-a06777c16087",
+          "name": "Upload an attachment",
+          "request": {
+            "name": "Upload an attachment",
+            "description": {},
+            "url": {
+              "path": [
+                "attachments"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0670dbcc-83fa-4bce-bdfc-a6a5fdcc90e1",
+              "name": "The uploaded attachment.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "attachments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.groovehq.com/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "25e15cf4-1f7b-44f9-8595-25866c92227a",
+    "name": "Groove REST API v1 Agents Attachments API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Groove REST API v1 provides programmatic access to Groove help-desk\nresources including tickets, messages, customers, agents, groups,\nmailboxes, folders, attachments, webhooks, knowledge bases, and widgets.\nNote: v1 REST is no longer in active development; Groove recommends the\nnew GraphQL API for richer features.\n\n\nContact Support:\n Name: Groove Developers",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Groove REST API v1 Agents Tickets API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Tickets",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List tickets",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.groovehq.com/v1/tickets"
+          },
+          "docs": "List tickets"
+        },
+        {
+          "info": {
+            "name": "Create a ticket",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.groovehq.com/v1/tickets"
+          },
+          "docs": "Create a ticket"
+        },
+        {
+          "info": {
+            "name": "Find a ticket",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.groovehq.com/v1/tickets/:number",
+            "params": [
+              {
+                "name": "number",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Find a ticket"
+        },
+        {
+          "info": {
+            "name": "Update ticket state",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.groovehq.com/v1/tickets/:number/state",
+            "params": [
+              {
+                "name": "number",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Update ticket state"
+        },
+        {
+          "info": {
+            "name": "Update ticket assignee",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.groovehq.com/v1/tickets/:number/assignee",
+            "params": [
+              {
+                "name": "number",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Update ticket assignee"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
