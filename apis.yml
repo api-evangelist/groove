@@ -23,6 +23,13 @@ accessModel:
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/groove.png
 tags:
+- Customer-Support
+- Help Desk
+- Shared Inbox
+- Knowledge Base
+- Conversations
+- Live Chat
+tags_raw:
 - Customer Support
 - Helpdesk
 - Shared Inbox
@@ -46,6 +53,13 @@ apis:
   tags:
   - GraphQL
   - Conversations
+  - Message
+  - Contacts
+  - Agents
+  - Knowledge Base
+  tags_raw:
+  - GraphQL
+  - Conversations
   - Messages
   - Contacts
   - Agents
@@ -66,6 +80,12 @@ apis:
   humanURL: https://doc.groovehq.com
   baseURL: https://api.groovehq.com/v1
   tags:
+  - Customer-Support
+  - Conversations
+  - Customers
+  - Mailboxes
+  - Webhook
+  tags_raw:
   - Customer Support
   - Conversations
   - Customers
@@ -83,6 +103,13 @@ apis:
   humanURL: https://doc.groovehq.com/webhooks
   baseURL: https://api.groovehq.com/v1/webhooks
   tags:
+  - Webhook
+  - Event
+  - Tickets
+  - Message
+  - Customers
+  - Agents
+  tags_raw:
   - Webhooks
   - Events
   - Tickets
@@ -141,6 +168,8 @@ apis:
   humanURL: https://developer.groovehq.com
   baseURL: https://api.groovehq.com/graphql
   tags:
+  - Group
+  tags_raw:
   - Groups
   properties:
   - type: OpenAPI
@@ -161,6 +190,8 @@ apis:
   humanURL: https://developer.groovehq.com
   baseURL: https://api.groovehq.com/graphql
   tags:
+  - Message
+  tags_raw:
   - Messages
   properties:
   - type: OpenAPI
@@ -181,6 +212,8 @@ apis:
   humanURL: https://developer.groovehq.com
   baseURL: https://api.groovehq.com/graphql
   tags:
+  - Webhook
+  tags_raw:
   - Webhooks
   properties:
   - type: OpenAPI
