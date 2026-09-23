@@ -1,0 +1,30 @@
+# Front Door AI Index — groove — 2026-09-17
+# AI vocabulary counted on the provider's root page. Generated; do not edit.
+# `score` is null unless ownership is `own` — see front_door_ai.py.
+front_door_ai:
+  slug: groove
+  lexicon_version: '1.0'
+  probed_at: '2026-09-17'
+  host: www.groovehq.com
+  final_host: helply.com
+  ownership: own
+  owner: groove
+  shares_host_with: null
+  inherited_from: null
+  verdict: scored
+  score: 77
+  host_score: 77
+  density: 46.44
+  words: 1658
+  tiers:
+    agentic: 27
+    core: 49
+    model: 1
+  ambiguous: 43
+  top_terms:
+    AI: 49
+    agent: 43
+    AI agent: 22
+    agentic: 4
+    Claude: 1
+    chatbot: 1

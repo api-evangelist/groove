@@ -1,15 +1,7 @@
 {
   "provider": "groove",
   "sources": [
-    "groove-agents-api-openapi.yml",
-    "groove-attachments-api-openapi.yml",
-    "groove-customers-api-openapi.yml",
-    "groove-folders-api-openapi.yml",
-    "groove-groups-api-openapi.yml",
-    "groove-mailboxes-api-openapi.yml",
-    "groove-messages-api-openapi.yml",
-    "groove-tickets-api-openapi.yml",
-    "groove-webhooks-api-openapi.yml"
+    "_original/groove-openapi.yml"
   ],
   "outputs": [
     "groove-agents-api-openapi.yml",
@@ -25,6 +17,53 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "groove-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "groove-openapi.yml: tagged paths GET /tickets -> Tickets",
+    "groove-openapi.yml: tagged paths POST /tickets -> Tickets",
+    "groove-openapi.yml: tagged paths GET /tickets/{number} -> Tickets",
+    "groove-openapi.yml: tagged paths PUT /tickets/{number}/state -> Tickets",
+    "groove-openapi.yml: tagged paths PUT /tickets/{number}/assignee -> Tickets",
+    "groove-openapi.yml: tagged paths GET /messages -> Messages",
+    "groove-openapi.yml: tagged paths POST /messages -> Messages",
+    "groove-openapi.yml: tagged paths GET /messages/{id} -> Messages",
+    "groove-openapi.yml: tagged paths GET /customers -> Customers",
+    "groove-openapi.yml: tagged paths GET /customers/{id} -> Customers",
+    "groove-openapi.yml: tagged paths PUT /customers/{id} -> Customers",
+    "groove-openapi.yml: tagged paths GET /agents -> Agents",
+    "groove-openapi.yml: tagged paths GET /agents/{id} -> Agents",
+    "groove-openapi.yml: tagged paths GET /groups -> Groups",
+    "groove-openapi.yml: tagged paths POST /groups -> Groups",
+    "groove-openapi.yml: tagged paths GET /groups/{id} -> Groups",
+    "groove-openapi.yml: tagged paths PUT /groups/{id} -> Groups",
+    "groove-openapi.yml: tagged paths DELETE /groups/{id} -> Groups",
+    "groove-openapi.yml: tagged paths GET /mailboxes -> Mailboxes",
+    "groove-openapi.yml: tagged paths GET /folders -> Folders",
+    "groove-openapi.yml: tagged paths GET /attachments -> Attachments",
+    "groove-openapi.yml: tagged paths POST /attachments -> Attachments",
+    "groove-openapi.yml: tagged paths POST /webhooks -> Webhooks",
+    "groove-openapi.yml: tagged paths DELETE /webhooks/{id} -> Webhooks",
+    "groove-openapi.yml: declared missing tag: Agents",
+    "groove-openapi.yml: declared missing tag: Attachments",
+    "groove-openapi.yml: declared missing tag: Customers",
+    "groove-openapi.yml: declared missing tag: Folders",
+    "groove-openapi.yml: declared missing tag: Groups",
+    "groove-openapi.yml: declared missing tag: Mailboxes",
+    "groove-openapi.yml: declared missing tag: Messages",
+    "groove-openapi.yml: declared missing tag: Tickets",
+    "groove-openapi.yml: declared missing tag: Webhooks",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "groove-agents-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "groove-attachments-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "groove-customers-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "groove-folders-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "groove-groups-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "groove-mailboxes-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "groove-messages-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "groove-tickets-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "groove-webhooks-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

@@ -1,0 +1,1 @@
+{"resource":"https://api.groovehq.com/mcp","authorization_servers":["https://api.groovehq.com"],"scopes_supported":["customer_mcp.read","customer_mcp.write","customer_mcp.send"],"bearer_methods_supported":["header"]}

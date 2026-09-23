@@ -1,6 +1,6 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Groove REST API v1 Agents Groups API
+  title: Groove REST API v1 Groups API
   description: 'The Groove REST API v1 provides programmatic access to Groove help-desk
 
     resources including tickets, messages, customers, agents, groups,
@@ -9,9 +9,7 @@ info:
 
     Note: v1 REST is no longer in active development; Groove recommends the
 
-    new GraphQL API for richer features.
-
-    '
+    new GraphQL API for richer features.'
   version: '1.0'
   contact:
     name: Groove Developers
