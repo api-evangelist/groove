@@ -41,7 +41,7 @@ x-docs-platform-confidence: medium
 x-docs-platform-checked: 2026-10-03
 x-docs-hosting: aws-cloudfront
 tags:
-- Customer Support
+- Customer Service
 - Help Desk
 - Shared Inbox
 - Knowledge Base
@@ -99,7 +99,7 @@ apis:
   humanURL: https://doc.groovehq.com
   baseURL: https://api.groovehq.com/v1
   tags:
-  - Customer Support
+  - Customer Service
   - Conversations
   - Customers
   - Mailboxes
