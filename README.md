@@ -1,4 +1,4 @@
-# Groove (groove)
+# Groove
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,107 +66,162 @@
 
 Groove is a customer support helpdesk and shared inbox platform for small and midsize businesses that consolidates email, live chat, social, and knowledge base content into a single agent workspace with automations, collision detection, reporting, and SLAs. Groove also provides customer- facing knowledge bases and self-service portals. Developers can integrate via the v2 GraphQL API or the legacy v1 REST API, both authenticated with an API key obtained from account settings.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/groove/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/groove/refs/heads/main/apis.yml)
+**Areas:** Customer Service · Help Desk · Shared Inbox · Knowledge Base · Conversations · Live Chat
 
-## Scope
+## Groove on APIs.io
 
-- **Type:** Index
+Everything profiled for Groove is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/groove/](https://apis.io/providers/groove/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (12)
 
-- Customer Support
-- Helpdesk
-- Shared Inbox
-- Knowledge Base
-- Conversations
-- Live Chat
+- [Groove GraphQL API v2](https://apis.io/apis/groove/graphql-api/) — GraphQL API exposing conversations, messages, agents, contacts, mailboxes, tags, and knowledge base data through a single endpoint. Authentication uses a…
+- [Groove REST API v1](https://apis.io/apis/groove/rest-api-v1/) — Legacy REST API for managing customers, conversations, messages, mailboxes, agents, tags, and webhooks in Groove. Authentication uses a Bearer API key. The…
+- [Groove Webhooks](https://apis.io/apis/groove/webhooks/) — Groove's webhook surface delivered through the legacy REST API webhook subscription endpoint. Customers register destination URLs and event types via POST…
+- [Groove Agents API](https://apis.io/apis/groove/groove-agents-api/) — The Agents API from Groove — 2 operation(s) for agents.
+- [Groove Attachments API](https://apis.io/apis/groove/groove-attachments-api/) — The Attachments API from Groove — 1 operation(s) for attachments.
+- [Groove Customers API](https://apis.io/apis/groove/groove-customers-api/) — The Customers API from Groove — 2 operation(s) for customers.
+- [Groove Folders API](https://apis.io/apis/groove/groove-folders-api/) — The Folders API from Groove — 1 operation(s) for folders.
+- [Groove Groups API](https://apis.io/apis/groove/groove-groups-api/) — The Groups API from Groove — 2 operation(s) for groups.
+- [Groove Mailboxes API](https://apis.io/apis/groove/groove-mailboxes-api/) — The Mailboxes API from Groove — 1 operation(s) for mailboxes.
+- [Groove Messages API](https://apis.io/apis/groove/groove-messages-api/) — The Messages API from Groove — 2 operation(s) for messages.
+- [Groove Tickets API](https://apis.io/apis/groove/groove-tickets-api/) — The Tickets API from Groove — 4 operation(s) for tickets.
+- [Groove Webhooks API](https://apis.io/apis/groove/groove-webhooks-api/) — The Webhooks API from Groove — 2 operation(s) for webhooks.
 
-## Timestamps
+### Published properties
 
-- **Created:** 2026-05-11
-- **Modified:** 2026-05-30
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### AsyncAPI (1)
 
-### Groove GraphQL API v2
+Event-driven and webhook contracts.
 
-GraphQL API exposing conversations, messages, agents, contacts, mailboxes, tags, and knowledge base data through a single endpoint. Authentication uses a Bearer API key retrieved from Groove account settings. The GraphQL API is the actively developed replacement for the legacy v1 REST API.
+- [Groove Webhooks](https://apis.io/asyncapis/groove/groove-webhooks-asyncapi/)
 
-- **Human URL:** [https://developer.groovehq.com](https://developer.groovehq.com)
-- **Base URL:** `https://api.groovehq.com/graphql`
+#### Event channels (14)
 
-#### Tags
+Individual events and webhooks the provider emits.
 
-- GraphQL
-- Conversations
-- Messages
-- Contacts
-- Agents
-- Knowledge Base
+- [agent_archived](https://apis.io/channels/groove/agent-archived/)
+- [agent_invited](https://apis.io/channels/groove/agent-invited/)
+- [agent_replied](https://apis.io/channels/groove/agent-replied/)
+- [customer_added](https://apis.io/channels/groove/customer-added/)
+- [customer_replied](https://apis.io/channels/groove/customer-replied/)
+- [note_added](https://apis.io/channels/groove/note-added/)
+- [ticket_assigned](https://apis.io/channels/groove/ticket-assigned/)
+- [ticket_closed](https://apis.io/channels/groove/ticket-closed/)
+- [ticket_deleted](https://apis.io/channels/groove/ticket-deleted/)
+- [ticket_moved](https://apis.io/channels/groove/ticket-moved/)
+- [ticket_opened](https://apis.io/channels/groove/ticket-opened/)
+- [ticket_priority_changed](https://apis.io/channels/groove/ticket-priority-changed/)
+- [ticket_started](https://apis.io/channels/groove/ticket-started/)
+- [ticket_tagged](https://apis.io/channels/groove/ticket-tagged/)
 
-#### Properties
+#### GraphQL (1)
 
-- [Documentation](https://developer.groovehq.com)
-- [Git Hub  Documentation](https://github.com/GrooveHQ/docs)
-- [Postman Collection](collections/groove.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/groove.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+GraphQL schemas.
 
-### Groove REST API v1
+- [Groove GraphQL API](https://apis.io/graphqls/groove/groove-graphql/)
 
-Legacy REST API for managing customers, conversations, messages, mailboxes, agents, tags, and webhooks in Groove. Authentication uses a Bearer API key. The REST API is no longer actively developed; new integrations should target the GraphQL API.
+#### MCP servers (1)
 
-- **Human URL:** [https://doc.groovehq.com](https://doc.groovehq.com)
-- **Base URL:** `https://api.groovehq.com/v1`
+Model Context Protocol servers that expose the API to agents.
 
-#### Tags
+- [groove](https://apis.io/servers/groove/groove/)
 
-- Customer Support
-- Conversations
-- Customers
-- Mailboxes
-- Webhooks
+#### Agentic access (1)
 
-#### Properties
+Which operations an agent can call, which act, and which need a human in the loop.
 
-- [Documentation](https://doc.groovehq.com)
-- [Postman Collection](collections/groove.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/groove.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Groove Agentic Access](https://apis.io/agentic-access/groove/groove-agentic-access/)
 
-### Groove Webhooks
+#### Collections (10)
 
-Groove's webhook surface delivered through the legacy REST API webhook subscription endpoint. Customers register destination URLs and event types via POST /v1/webhooks; Groove then POSTs JSON payloads for the fourteen documented events covering tickets, customers, agents, and messages.
+Postman and Open Collection request collections.
 
-- **Human URL:** [https://doc.groovehq.com/webhooks](https://doc.groovehq.com/webhooks)
-- **Base URL:** `https://api.groovehq.com/v1/webhooks`
+- [Groove REST API v1](https://apis.io/collections/groove/open-groove/)
+- [Groove REST API v1 Agents API](https://apis.io/collections/groove/open-groove-agents-api/)
+- [Groove REST API v1 Agents Attachments API](https://apis.io/collections/groove/open-groove-attachments-api/)
+- [Groove REST API v1 Agents Customers API](https://apis.io/collections/groove/open-groove-customers-api/)
+- [Groove REST API v1 Agents Folders API](https://apis.io/collections/groove/open-groove-folders-api/)
+- [Groove REST API v1 Agents Groups API](https://apis.io/collections/groove/open-groove-groups-api/)
+- [Groove REST API v1 Agents Mailboxes API](https://apis.io/collections/groove/open-groove-mailboxes-api/)
+- [Groove REST API v1 Agents Messages API](https://apis.io/collections/groove/open-groove-messages-api/)
+- [Groove REST API v1 Agents Tickets API](https://apis.io/collections/groove/open-groove-tickets-api/)
+- [Groove REST API v1 Agents Webhooks API](https://apis.io/collections/groove/open-groove-webhooks-api/)
 
-#### Tags
+#### Governance rules (1)
 
-- Webhooks
-- Events
-- Tickets
-- Messages
-- Customers
-- Agents
+Spectral rulesets for the provider's contracts.
 
-#### Properties
+- [Groove — asyncapi rules](https://apis.io/rules/groove/groove-asyncapi-spectral-rules/)
 
-- [Documentation](https://doc.groovehq.com/webhooks)
-- [AsyncAPI](https://raw.githubusercontent.com/api-evangelist/groove/refs/heads/main/asyncapi/groove-webhooks-asyncapi.yml) — [AsyncAPI Specification](https://www.asyncapi.com/docs/reference/specification/latest)
-- [Postman Collection](collections/groove.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/groove.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+#### Security (2)
 
-## Common Properties
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Groove Authentication](https://apis.io/security/groove/groove-authentication/)
+- [Groove Domain Security](https://apis.io/security/groove/groove-domain-security/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
 - [Website](https://www.groovehq.com)
-- [Developer  Portal](https://developer.groovehq.com)
 - [Documentation](https://doc.groovehq.com)
 - [Pricing](https://www.groovehq.com/pricing)
-- [Sign Up](https://www.groovehq.com/signup)
 - [Blog](https://www.groovehq.com/blog)
-- [Git Hub](https://github.com/GrooveHQ)
-- [LinkedIn](https://www.linkedin.com/company/groovehq)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 32.2** — thin · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 68.3 |
+| Contract quality | 52.3 |
+| Contract governance | 11.4 |
+| Operational transparency | 5.3 |
+| Developer ergonomics | 33.3 |
+| Access clarity | 23.7 |
+
+**Agent readiness 40.1** — agent-ready (gated down from agent-native)
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | verified |
+| Auth Clarity | served (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | derived (partial credit) |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | served (partial credit) |
+| Protected Resource Metadata | verified |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | distinct |
+
+**Regulatory alignment 11.8** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/groove/](https://apis.io/providers/groove/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Groove: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/groove/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
